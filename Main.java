@@ -3,16 +3,16 @@ import java.util.*;
 public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String n = sc.next();
+        String s = sc.next();
+        int n = sc.nextInt();
 
-        if(n.equals("NLCS")){
-            System.out.println("North London Collegiate School");
-        }else if(n.equals("BHA")){
-            System.out.println("Branksome Hall Asia");
-        }else if(n.equals("KIS")){
-            System.out.println("Korea International School");
-        }else if(n.equals("SJA")){
-            System.out.println("St. Johnsbury Academy");
+        int cnt = 0;
+        for (int i=0;i<n;i++){
+            String w = sc.next();
+            if (s.equals(w)){
+                cnt+=1;
+            }
         }
+        System.out.println(cnt);
     }
 }
