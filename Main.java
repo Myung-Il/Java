@@ -3,16 +3,10 @@ import java.util.*;
 public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        int n = sc.nextInt();
+        int n = sc.nextInt()+1;
 
-        int cnt = 0;
-        for (int i=0;i<n;i++){
-            String w = sc.next();
-            if (s.equals(w)){
-                cnt+=1;
-            }
+        for (int i=1;i<n;i++){
+            System.out.println(" ".repeat(n-i-1)+"* ".repeat(i-1)+"*");
         }
-        System.out.println(cnt);
     }
 }
