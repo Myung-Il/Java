@@ -1,0 +1,2 @@
+Condition - 조건문 ( 변수 중복 안됨 )
+Multiple inputs - 복수 입력 ( 파이썬에서 map(int,input().split()) 같은 역할 )
