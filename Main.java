@@ -1,27 +1,20 @@
+import java.io.*;
 import java.util.*;
 
-public class Main{
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = 1000-sc.nextInt();
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer list = new StringTokenizer(br.readLine());
 
-        int cnt = 0;
-        while (n!=0){
-            if (n>=500){
-                n-=500;
-            }else if (n>=100){
-                n-=100;
-            }else if (n>=50){
-                n-=50;
-            }else if (n>=10){
-                n-=10;
-            }else if (n>=5){
-                n-=5;
-            }else if (n>=1){
-                n-=1;
-            }
-            cnt+=1;
+        int n = Integer.parseInt(list.nextToken());
+        int k = Integer.parseInt(list.nextToken());
+
+        int[] arr = new int[n];
+        list = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++){
+            arr[i] = Integer.parseInt(list.nextToken());
         }
-        System.out.println(cnt);
+        Arrays.sort(arr);
+        System.out.println(arr[k-1]);
     }
 }
