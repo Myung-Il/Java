@@ -1,20 +1,25 @@
-import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer list = new StringTokenizer(br.readLine());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
 
-        int n = Integer.parseInt(list.nextToken());
-        int k = Integer.parseInt(list.nextToken());
+        int n = s.length();
+        List<String> l = new ArrayList<>();
+        for (int i=1;i<n-1;i++){
+            for (int j=i+1;j<n;j++){
+                StringBuilder front = new StringBuilder(s.substring(0, i));
+                StringBuilder middle = new StringBuilder(s.substring(i, j));
+                StringBuilder back = new StringBuilder(s.substring(j));
 
-        int[] arr = new int[n];
-        list = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
-            arr[i] = Integer.parseInt(list.nextToken());
+                String f_r = front.reverse().toString();
+                String m_r = middle.reverse().toString();
+                String b_r = back.reverse().toString();
+                l.add(f_r+m_r+b_r);
+            }
         }
-        Arrays.sort(arr);
-        System.out.println(arr[k-1]);
+        Collections.sort(l);
+        System.out.println(l.get(0));
     }
 }
