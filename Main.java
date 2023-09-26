@@ -3,7 +3,15 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println((n%2==1?"SK":"CY"));
+        
+        while (sc.hasNext()){
+            int s = 1,cnt = 1;
+            int n = sc.nextInt();
+            while ((s %= n)!=0){
+                s = s*10+1;
+                cnt++;
+            }
+            System.out.println(cnt);
+        }
     }
 }
