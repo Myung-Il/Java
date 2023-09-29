@@ -1,38 +1,27 @@
 import java.util.*;
 
 public class Main {
+    private static int n, k, ans;
+    private static int[] l;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a,b;
-        a = sc.nextInt();
-        b = sc.nextInt();
-
-        int[] la = new int[a];
-        for (int i=0;i<a;i++){
-            la[i] = sc.nextInt();
+        n = sc.nextInt();
+        k = sc.nextInt();
+        
+        l = new int[k];
+        for (int i=0;i<k;i++){
+            l[i] = sc.nextInt();
         }
-
-        int[] lb = new int[b];
-        for (int i=0;i<b;i++){
-            lb[i] = sc.nextInt();
+        Arrays.sort(l);
+        Dfs(0);
+        System.out.println(ans);
+    }
+    private static void Dfs(int z){
+        if (z>n)return;
+        if (z>ans)ans=z;
+        for (int i=k-1;i>-1;i--){
+            Dfs(z*10+l[i]);
         }
-
-        Arrays.sort(la);
-        Arrays.sort(lb);
-        int n = 0,m = 0;
-        StringBuilder str = new StringBuilder();
-        while (n<a && m<b){
-            if (la[n]<lb[m]){
-                str.append(la[n++]+" ");
-            }else{
-                str.append(lb[m++]+" ");
-            }
-        }
-        while (n<a){
-            str.append(la[n++]+" ");
-        }while (m<b){
-            str.append(lb[m++]+" ");
-        }
-    System.out.println(str.toString());
     }
 }
