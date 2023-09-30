@@ -2,33 +2,35 @@ import java.io.*;
 import java.util.*;
 
 public class Room {
-	private static int[] num;
-	private static int N;
-	private static int K;
-	private static int ans;
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
-		N = Integer.parseInt(st.nextToken());
-		K = Integer.parseInt(st.nextToken());
-		st = new StringTokenizer(br.readLine()," ");
-		num = new int[K];
-		for (int i = 0; i < K; i++) {
-			num[i] = Integer.parseInt(st.nextToken());
-		}
-		Arrays.sort(num);
-		dfs(0);
-		System.out.println(ans);
-	}
+    static Stack<Integer> stack = new Stack<>();
+    static StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	private static void dfs(int now) {
-		if(now>N) return;
-		
-		if(ans<now) ans=now;
-		
-		for (int i = K-1; i > -1; i--) {
-			dfs(now*10+num[i]);
-		}
-	}
+        int N = Integer.parseInt(br.readLine()); //명령어의 수
+
+        while(N-- > 0){
+            solution(br.readLine());
+        }
+
+        br.close();
+
+        System.out.println(sb);
+    }
+
+    static void solution(String query){
+        char c = query.charAt(0); //첫번째 문자는 명령어
+
+        switch (c){
+            //case 1의 경우 query.substring(2);를 한 이유는 공백도 문자로 포함하기 때문이다 1 X 형태이기 때문에 X의인덱스는 2다.
+            case '1' : stack.push(Integer.parseInt(query.substring(2))); return;
+            case '2' : sb.append(stack.isEmpty() ? -1 : stack.pop()).append("\n"); return;
+            case '3' : sb.append(stack.size()).append("\n"); return;
+            case '4' : sb.append(stack.isEmpty() ? 1 : 0).append("\n"); return;
+            case '5' : sb.append(stack.isEmpty() ? -1 : stack.peek()).append("\n"); return;
+            default: break;
+        }
+    }
 }
+        
