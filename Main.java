@@ -5,17 +5,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         
-        StringBuffer sb = new StringBuffer();
-        Stack<Integer> stk = new Stack<>();
+        int a,b;
         for (int i=0;i<n;i++){
-            switch (sc.nextInt()){
-                case 1:stk.push(sc.nextInt());break;
-                case 2:sb.append((stk.empty()?-1:stk.pop())+"\n");break;
-                case 3:sb.append(stk.size()+"\n");break;
-                case 4:sb.append((stk.empty()?1:0)+"\n");break;
-                case 5:sb.append((stk.empty()?-1:stk.peek())+"\n");break;
-            }
+            a = sc.nextInt();
+            b = sc.nextInt();
+            if (a<b)System.out.println("NO BRAINS");
+            else System.out.println("MMM BRAINS");
         }
-        System.out.println(sb.toString());
     }
 }
