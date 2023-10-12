@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Room {
+public class lesson {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
