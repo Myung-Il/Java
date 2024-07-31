@@ -7,6 +7,7 @@ class List{
 }
 
 public class Test1 {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
