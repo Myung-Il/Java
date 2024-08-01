@@ -1,7 +1,9 @@
+package Samsung_A_previous_exam;
+
 import java.util.Scanner;
 
 
-public class Main {
+public class G17070 {
     static int n;
     static int ans;
     static int[][] arr;
