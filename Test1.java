@@ -1,34 +1,44 @@
+import java.io.*;
 import java.util.Scanner;
+class Test1
+{
+     public static void main(String[] args) throws IOException
+     {
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+          Scanner scan = new Scanner(System.in);  // 한줄안에 여러 자료형이나 별개의 데이터가
 
-class List{
-    public void make(int n, int m, int list[][]){
+                                                                     //있을경우각각 따로 읽을수 있다.
+          String name;
+          char gender;
+          int age;
+          double tall;
 
-    }
-}
+          System.out.print("Input name and age:");
+          name = scan.next();                              // scanf(%d %s %c)의 대용으로 사용
+          age = scan.nextInt();
 
-public class Test1 {
-    @SuppressWarnings("resource")
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int[][] list1 = new int[n][m];
-        for(int i=-1;i++<n;){
-            for(int j=-1;j++<m;){
-                list1[j][i] = sc.nextInt();
-            }
-        }
-        
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int[][] list2 = new int[n][m];
-        for(int i=-1;i++<n;){
-            for(int j=-1;j++<m;){
-                list2[b][a] = sc.nextInt();
-            }
-        }
-
-
-    }
+          System.out.print("Input gender :");
+          gender = (char)System.in.read();
+          System.in.read();                
+          System.in.read();     
+ 
+          System.out.print("Input tall :");
+          tall = Double.parseDouble(br.readLine());
+         
+          System.out.println("이름 : "+name);
+          if(gender == 'M')
+          {
+               System.out.println("성별 : 남자");
+          }
+          else if(gender == 109)
+          {
+               System.out.println("성별 : 남자");
+          }
+          else
+          {
+               System.out.println("성별 : 여자");
+          }
+          System.out.println("나이 : "+age);
+          System.out.println("신장 : "+tall);
+     }
 }
